@@ -158,6 +158,25 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         
+        .responsive-embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .responsive-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         .embed-options {
             display: flex;
             flex-direction: column;
@@ -411,6 +430,24 @@
         .vpn-popup-content button:hover {
             background-color: #4c5de2;
         }
+        .responsive-embed {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        }
+
+        .responsive-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        }
+
     </style>
 </head>
 
@@ -445,7 +482,9 @@
                     <!-- Spotify Embed -->
                     <div class="embed-section">
                         <div class="embed-title">🎧 Spotify Embed</div>
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3aX03qe0VLq2qkBqCO8sZW/video?utm_source=generator" width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <div class="responsive-embed-container">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3aX03qe0VLq2qkBqCO8sZW?utm_source=generator" width="624" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
