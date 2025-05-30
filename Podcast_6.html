@@ -363,6 +363,54 @@
                 align-items: center;
             }
         }
+
+        #vpn-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .vpn-popup-content {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        .vpn-popup-content h2 {
+            margin-bottom: 15px;
+            color: #5c67f2;
+        }
+
+        .vpn-popup-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .vpn-popup-content button {
+            background-color: #5c67f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .vpn-popup-content button:hover {
+            background-color: #4c5de2;
+        }
     </style>
 </head>
 
@@ -467,6 +515,37 @@ We also dig into what it’s like to become internet famous when you’re an int
     <script src="js/jquery-3.5.0.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- VPN Notice Popup -->
+    <div id="vpn-popup" style="display: none;">
+        <div class="vpn-popup-content">
+            <h2>Notice</h2>
+            <p>Spotify podcasts may not be available in Pakistan. Please use a VPN to access this content.</p>
+            <div style="margin-bottom: 15px;">
+                <label>
+                    <input type="checkbox" id="dont-show-again"> Don't show again
+                </label>
+            </div>
+            <button onclick="closeVPNPopup()">Got it!</button>
+        </div>
+    </div>
+
+
+    <script>
+        window.onload = function() {
+            if (localStorage.getItem("hideVPNPopup") !== "true") {
+                document.getElementById("vpn-popup").style.display = "flex";
+            }
+        };
+
+        function closeVPNPopup() {
+            const dontShowAgain = document.getElementById("dont-show-again").checked;
+            if (dontShowAgain) {
+                localStorage.setItem("hideVPNPopup", "true");
+            }
+            document.getElementById("vpn-popup").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
