@@ -36,7 +36,7 @@ This project was developed by a group of psychology students to:
 
 For inquiries, feedback, or collaboration:
 📧 Email: easeup.project@gmail.com  
-🏫 University: Muhammad Ali Jinnah – Department of Psychology
+🏫 University: Muhammad Ali Jinnah – Department of Software Engineering.
 
 ---
 
